@@ -2,14 +2,14 @@ pipeline {
   agent any
 
   environment {
-    DOCKER_REG = "docker.io/yourdockerhubuser"
+    DOCKER_REG = "docker.io/pavankumar99999"
     IMAGE_NAME = "${DOCKER_REG}/hello-service"
     SSH_CREDENTIALS = 'deploy-ssh'          // Jenkins SSH credential id
     DOCKERHUB_CREDS = 'dockerhub-creds'    // Jenkins DockerHub username/password
-    TARGET_HOST = "deploy@YOUR_TARGET_IP"  // user@target_ip
+    TARGET_HOST = "deploy@13.127.8.25"  // user@target_ip
     TARGET_SSH_PORT = "22"
     APP_NAME = "hello-service"
-    APP_PORT = "8080"
+    APP_PORT = "8085"
     IMAGE_TAG = "${env.BUILD_NUMBER}-${env.GIT_COMMIT.substring(0,7)}"
   }
 
